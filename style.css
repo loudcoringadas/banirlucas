@@ -1,0 +1,132 @@
+:root {
+  --primary: #3b82f6;
+  --background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+    }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--background);
+  color: #fff;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+.logo {
+  max-width: 160px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+
+a.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+a.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.5);
+}
+
+.key-container {
+  position: relative;
+  border: 3px solid #0051D7;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 800;
+}
+
+#icon-copy {
+  padding: 5px;
+  font-size: 100%;
+  position: absolute;
+  color: #CCCCCC;
+  top: 5px;
+  right: 5px;
+}
+
+#your-key {
+  text-align: center;
+}
+
+footer {
+  margin-top: 60px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.container-main-key {
+  display: none;
+}
+
+.circle-container {
+  transform: rotate(0deg);
+  border: 5px solid #0051D7;
+  border-radius: 50%;
+  border-bottom-color: transparent;
+  height: 100px;
+  width: 100px;
+  animation-name: rotate-infinite;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  
+}
+
+@keyframes rotate-infinite {
+  
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+  
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  a.btn {
+    padding: 12px 25px;
+  }
+}

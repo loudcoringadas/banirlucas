@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>S333 HUBS | Acesso Premium</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  
+  <div class="circle-container"></div>
+  
+  <div class="container-main-key">
+    <main>
+      <img src="/Main logo.png" alt="S333 HUBS Logo" class="logo"/>
+      <h1>Aqui está sua key</h1>
+      <div class="key-container">
+        <i id="icon-copy" class="fa-solid fa-copy"></i>
+        <span id="your-key">xxxx-xxx</span>
+      </div>
+    </main>
+    <footer>
+      © 2025 S333 HUBS. Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <script>
+  const ref = document.referrer;
+  const expectedRef = "https://linkvertise.com/1338065/s333-macro-for-asura?o=sharing";
+  if (!ref || !ref.startsWith(expectedRef)) {
+    window.location.href = "/";
+  }
+</script>
+
+<script>
+    const containerCircle = document.querySelector(".circle-container")
+    const containerMain = document.querySelector(".container-main-key")
+    const yourKey = document.getElementById("your-key")
+    const iconCopy = document.getElementById("icon-copy")
+    const alertCopy = document.getElementById("alert-copy")
+    
+    function copiarTexto(texto) {
+      navigator.clipboard.writeText(texto)
+      .then(() => {
+        // Mostra o alerta de "copiado"
+        alertCopy.classList.add("show")
+        setTimeout(() => {
+          alertCopy.classList.remove("show")
+        }, 2000)
+      })
+      .catch((err) => {
+        console.error("Erro ao copiar:", err)
+      })
+    }
+    
+    fetch("https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLgAAYdKNARyFuwFuEwaHiCIU9xK7OWkeG26T6hsRO3RdzARN4LHq8U6x7tyT7XyxFDwmVRBh1mA_NekkyntvdbxZwMVr87MGGKg0KJ76imcoKGApBUxIiw8_cS3BU9PXFWGP7O1K_0eYrpZmhfiis76NKcsOFAEf7W-Ea3M75BoCIRfjhQ6yowI2AVWpvnByUTBtUMLbtU-cW_RnAzQN4s_6k3orDl9SN1GT880K-o7GRQiJkmuL4CXyxqAED8-8UjLRBoeb0i7_aLSqa0jwPSY9m5yUMW3DRSZvcEa&lib=MDNfwM8LWhfsG54-6hiJ6MNEkDLBi_Okf")
+    .then(response => response.text())
+    .then(data => {
+      containerCircle.style.display = "none"
+      containerMain.style.display = "block"
+      yourKey.textContent = data
+    })
+
+    iconCopy.addEventListener("click", () => {
+      iconCopy.style.color = "#F6F6F6"
+      setTimeout(() => { iconCopy.style.color = "#CCCCCC" }, 200)
+      copiarTexto(yourKey.textContent)
+    })
+  </script>
+</body>
+</html>
